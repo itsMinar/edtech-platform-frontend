@@ -1,0 +1,168 @@
+:root {
+  --dark-color: #080e1b;
+  --main-color: #01cd8a;
+}
+
+button:disabled {
+  opacity: 0.6 !important;
+  color: var(--dark-color) !important;
+  background-color: #ddd !important;
+  cursor: not-allowed !important;
+  border-color: #ddd !important;
+}
+
+/* modal styles */
+.modal {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  min-width: 400px;
+  max-width: 500px;
+  min-height: 200px;
+  /* max-height: 95vh; */
+  background-color: var(--dark-color);
+  border: 2px solid #01cd8a;
+}
+
+.modal.md {
+  max-width: 500px !important;
+}
+.modal.lg {
+  max-width: 800px !important;
+}
+.modal.xl {
+  max-width: 95vw !important;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000088;
+}
+
+.modal .close_btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #dc2626;
+  /* border: 2px solid #dc2626; */
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal .title {
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #0202024b;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+/* form styles */
+.form_control {
+  margin-bottom: 10px;
+}
+
+.form_control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form_control input,
+.form_control textarea,
+.form_control select {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 6px 10px;
+  background-color: var(--dark-color);
+  border: 1px solid #5a5a5a;
+}
+
+.quiz_option {
+  display: grid;
+  grid-template-columns: auto 100px;
+  align-items: center;
+  gap: 10px;
+}
+
+.quiz_option .btn_class {
+  text-align: right;
+}
+
+.quiz_option span {
+  display: block;
+  visibility: hidden;
+}
+
+.input_bg__control,
+.input_bg__menu {
+  background-color: var(--dark-color) !important;
+  border: 1px solid #5a5a5a;
+}
+
+.input_bg__single-value {
+  color: #fff !important;
+}
+
+.form_control input::placeholder,
+.form_control textarea::placeholder,
+.input_bg__input::placeholder {
+  color: #5a5a5a85;
+  opacity: 1; /* Firefox */
+}
+
+.form_control input:-ms-input-placeholder,
+.form_control textarea:-ms-input-placeholder,
+.input_bg__input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #5a5a5a85;
+}
+
+.form_control input::-ms-input-placeholder,
+.form_control textarea::-ms-input-placeholder,
+.input_bg__input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #5a5a5a85;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.option_group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.correct_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.submitted_btn {
+  text-align: center;
+}
+
+.submitted_btn .btn {
+  margin-top: 8px;
+}
