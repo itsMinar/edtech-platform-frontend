@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Logo from '../../assets/images/logo.png';
+import { useLoginMutation } from '../../redux/features/auth/authApi';
 
 export default function Login({ admin }) {
+  const [login, { isLoading }] = useLoginMutation();
   const [userInfo, setUserInfo] = useState({
     email: '',
     password: '',
@@ -19,6 +22,12 @@ export default function Login({ admin }) {
   // handle login form submit
   const handleLogin = (e) => {
     e.preventDefault();
+
+    if (Object.values(userInfo).filter((item) => item).length === 0) {
+      return toast.warning('Please fil-up login field');
+    }
+
+    login({ data: userInfo, role: admin ? 'admin' : 'student' });
   };
 
   return (
@@ -85,8 +94,9 @@ export default function Login({ admin }) {
             <button
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500"
+              disabled={isLoading}
             >
-              Sign in
+              {isLoading ? 'Loading...' : 'Sign in'}
             </button>
           </div>
         </form>
