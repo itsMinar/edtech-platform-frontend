@@ -1,6 +1,7 @@
 import moment from 'moment/moment';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ManageSubmitAssignment from '../../components/Student/ManageSubmitAssignment';
 import useAuth from '../../hooks/useAuth';
 import { useGetAssignmentsQuery } from '../../redux/features/assignment/assignmentApi';
 import { useGetAssignmentMarkQuery } from '../../redux/features/assignmentMark/assignmentMarkApi';
@@ -18,6 +19,13 @@ export default function CoursePlayer() {
   const { data: quizzes } = useGetQuizzesQuery();
 
   const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const initialOpenState = { open: false, type: '', data: null };
+  const [open, setOpen] = useState(initialOpenState);
+  // close modal
+  const closeModal = () => {
+    setOpen(initialOpenState);
+  };
 
   // Destructuring in Function Arguments
   const findAssignment = assignments?.find(
@@ -55,7 +63,6 @@ export default function CoursePlayer() {
               className="aspect-video"
               src={selectedVideo?.url}
               title={selectedVideo?.title}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -70,13 +77,27 @@ export default function CoursePlayer() {
                   moment(selectedVideo?.createdAt).format('DD MMMM YYYY')}
               </h2>
 
-              {/* Add assignment modal */}
+              {open?.open && (
+                <ManageSubmitAssignment
+                  open={open.open}
+                  type={open?.type}
+                  data={open?.data}
+                  closeModal={closeModal}
+                />
+              )}
 
               <div className="flex gap-4">
                 {findAssignment && (
                   <button
                     className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
-                    // on click
+                    onClick={() =>
+                      !findAssignmentMark &&
+                      setOpen({
+                        open: true,
+                        type: 'add',
+                        data: findAssignment,
+                      })
+                    }
                     disabled={findAssignmentMark ? true : false}
                   >
                     {findAssignmentMark ? 'এসাইনমেন্ট দিয়েছেন' : 'এসাইনমেন্ট'}
