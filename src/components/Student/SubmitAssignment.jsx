@@ -4,13 +4,9 @@ import useAuth from '../../hooks/useAuth';
 import { useAddAssignmentMarkMutation } from '../../redux/features/assignmentMark/assignmentMarkApi';
 import ManageModal from '../Common/ManageModal';
 
-export default function ManageSubmitAssignment({
-  type,
-  data,
-  open,
-  closeModal,
-}) {
+export default function SubmitAssignment({ data, open, closeModal }) {
   const auth = useAuth();
+
   const [
     addAssignmentMark,
     { isSuccess: isAddSuccess, isLoading: isAddLoading },
@@ -49,13 +45,7 @@ export default function ManageSubmitAssignment({
     <ManageModal
       isOpen={open}
       handleClose={closeModal}
-      title={
-        type === 'add'
-          ? 'Add Assignment'
-          : type === 'edit'
-            ? 'Update Assignment'
-            : 'Assignment'
-      }
+      title="Submit Assignment"
     >
       <h3 style={{ marginBottom: '10px' }}>Assignment: {data?.title}</h3>
       <form onSubmit={handleSubmit}>
@@ -74,13 +64,7 @@ export default function ManageSubmitAssignment({
 
         <div className="submitted_btn">
           <button className="btn" disabled={isAddLoading}>
-            {isAddLoading
-              ? 'Loading...'
-              : type === 'add'
-                ? 'Add Assignment'
-                : type === 'edit'
-                  ? 'Update Assignment'
-                  : 'Submit'}
+            {isAddLoading ? 'Loading...' : 'Submit Assignment'}
           </button>
         </div>
       </form>

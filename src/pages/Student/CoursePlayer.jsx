@@ -1,7 +1,7 @@
 import moment from 'moment/moment';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ManageSubmitAssignment from '../../components/Student/ManageSubmitAssignment';
+import SubmitAssignment from '../../components/Student/SubmitAssignment';
 import useAuth from '../../hooks/useAuth';
 import { useGetAssignmentsQuery } from '../../redux/features/assignment/assignmentApi';
 import { useGetAssignmentMarkQuery } from '../../redux/features/assignmentMark/assignmentMarkApi';
@@ -20,7 +20,7 @@ export default function CoursePlayer() {
 
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const initialOpenState = { open: false, type: '', data: null };
+  const initialOpenState = { open: false, data: null };
   const [open, setOpen] = useState(initialOpenState);
   // close modal
   const closeModal = () => {
@@ -78,9 +78,8 @@ export default function CoursePlayer() {
               </h2>
 
               {open?.open && (
-                <ManageSubmitAssignment
+                <SubmitAssignment
                   open={open.open}
-                  type={open?.type}
                   data={open?.data}
                   closeModal={closeModal}
                 />
@@ -94,7 +93,6 @@ export default function CoursePlayer() {
                       !findAssignmentMark &&
                       setOpen({
                         open: true,
-                        type: 'add',
                         data: findAssignment,
                       })
                     }
