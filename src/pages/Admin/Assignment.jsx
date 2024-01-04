@@ -18,7 +18,6 @@ export default function Assignment() {
 
   const initialState = { open: false, type: '', data: null };
   const [modalState, setModalState] = useState(initialState);
-
   // close modal
   const closeModal = () => {
     setModalState(initialState);
