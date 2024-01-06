@@ -1,0 +1,191 @@
+{
+  "users": [
+    {
+      "email": "minar@admin.com",
+      "password": "$2a$10$rGboggreJx4s1WnvfFvBG.QjmZzs3b.gW76ldpuCNNeR43e5t3C1C",
+      "name": "Minar Munshi",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "student@mail.com",
+      "password": "$2a$10$vE2/Nzf/jXzy1IAqm8Ily.ICZbziyYTJkt8O7a04VXIN0geQv6KnK",
+      "name": "Demo Student",
+      "role": "student",
+      "id": 2
+    }
+  ],
+  "videos": [
+    {
+      "title": "HTMX Crash Course by Traversy Media",
+      "url": "https://www.youtube.com/watch?v=0UvA7zvwsmg",
+      "views": "37,000",
+      "duration": "56:46",
+      "createdAt": "2024-01-01",
+      "description": "Learn HTMX by creating a couple of small projects with a Node.js and Express backend, including a contacts search, temperature converter, mock weather app with polling and form validation component. We will learn about the common HTMX attributes like hx-get, hx-post, hx-swap, etc.",
+      "id": 1
+    },
+    {
+      "title": "React Server Components by Lee Robinson",
+      "url": "https://www.youtube.com/watch?v=8DyzsSWNcDE",
+      "views": "10000",
+      "duration": "51:25",
+      "createdAt": "2024-01-05",
+      "description": "Discussing a well-written, thoughtful article about React and Next.js.",
+      "id": 2
+    }
+  ],
+  "assignments": [
+    {
+      "title": "Create a simple to-do list application that allows users to add, edit, and delete tasks without full page reloads.",
+      "video_id": 1,
+      "totalMark": 100,
+      "video_title": "HTMX Crash Course by Traversy Media",
+      "id": 1
+    }
+  ],
+  "quizzes": [
+    {
+      "question": "What does the hx-get attribute do in HTMX?",
+      "video_id": 1,
+      "options": [
+        {
+          "option": "Triggers JavaScript on element click",
+          "isCorrect": false,
+          "id": 1
+        },
+        {
+          "option": "Fetches data from a URL and updates the element",
+          "isCorrect": true,
+          "id": 2
+        },
+        {
+          "option": "Submits a form and displays the response",
+          "isCorrect": false,
+          "id": 3
+        },
+        {
+          "option": "Defines a custom event handler",
+          "isCorrect": false,
+          "id": 4
+        }
+      ],
+      "video_title": "HTMX Crash Course by Traversy Media",
+      "id": 1
+    },
+    {
+      "question": "Which element is NOT necessary for a basic HTMX form submission?",
+      "video_id": 1,
+      "options": [
+        {
+          "option": "<form> tag with hx-post attribute",
+          "isCorrect": false,
+          "id": 1
+        },
+        {
+          "option": "Input elements with corresponding names",
+          "isCorrect": false,
+          "id": 2
+        },
+        {
+          "option": "Submit button or link with hx-trigger attribute",
+          "isCorrect": false,
+          "id": 3
+        },
+        {
+          "option": "JavaScript code to handle the form data",
+          "isCorrect": true,
+          "id": 4
+        }
+      ],
+      "video_title": "HTMX Crash Course by Traversy Media",
+      "id": 2
+    },
+    {
+      "question": "What is the main advantage of using React Server Components compared to traditional client-side rendering?",
+      "video_id": 2,
+      "options": [
+        {
+          "option": "Improved SEO due to pre-rendered content.",
+          "isCorrect": true,
+          "id": 1
+        },
+        {
+          "option": "Reduced client-side JavaScript bundle size.",
+          "isCorrect": false,
+          "id": 2
+        },
+        {
+          "option": "Enhanced interactivity for complex UIs.",
+          "isCorrect": false,
+          "id": 3
+        },
+        {
+          "option": "Simplified state management in React components.",
+          "isCorrect": false,
+          "id": 4
+        }
+      ],
+      "video_title": "React Server Components by Lee Robinson",
+      "id": 3
+    },
+    {
+      "question": "Which tools and libraries are currently compatible with React Server Components?",
+      "video_id": 2,
+      "options": [
+        {
+          "option": "Any framework or library that supports React can be used.",
+          "isCorrect": false,
+          "id": 1
+        },
+        {
+          "option": "Next.js is the primary framework for using server components.",
+          "isCorrect": true,
+          "id": 2
+        },
+        {
+          "option": "Dedicated tooling and libraries are still under development.",
+          "isCorrect": false,
+          "id": 3
+        },
+        {
+          "option": "React Server Components can only be used in standalone projects.",
+          "isCorrect": false,
+          "id": 4
+        }
+      ],
+      "video_title": "React Server Components by Lee Robinson",
+      "id": 4
+    },
+    {
+      "question": "What are some potential future applications of React Server Components beyond typical web development?",
+      "video_id": 2,
+      "options": [
+        {
+          "option": "Server-side rendering for mobile apps and hybrid platforms.",
+          "isCorrect": true,
+          "id": 1
+        },
+        {
+          "option": "Integrating React with server-side frameworks like Node.js or Go.",
+          "isCorrect": true,
+          "id": 2
+        },
+        {
+          "option": "Building real-time collaborative applications and platforms.",
+          "isCorrect": true,
+          "id": 3
+        },
+        {
+          "option": "Not one of the above.",
+          "isCorrect": false,
+          "id": 4
+        }
+      ],
+      "video_title": "React Server Components by Lee Robinson",
+      "id": 5
+    }
+  ],
+  "assignmentMark": [],
+  "quizMark": []
+}

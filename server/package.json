@@ -1,0 +1,19 @@
+{
+  "name": "edtech-platform-json-server",
+  "description": "Dummy Backend with json-server for EdTech Platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db.json --no-cors true -m ./node_modules/json-server-auth  --port 8000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  },
+  "keywords": [
+    "json",
+    "server"
+  ],
+  "author": "Md. Minar Munshi",
+  "license": "ISC"
+}
